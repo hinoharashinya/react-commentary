@@ -1,11 +1,11 @@
-import {useState} from "react";
+import {useState, memo} from "react";
 
-const Child = () => {
+const Child = memo(() => {
   console.log("child is called");
   return(
     <h3>child</h3>
   );
-}
+});
 
 export const CountUp = () => {
   const [count, setCount] = useState(0);
