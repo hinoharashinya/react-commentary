@@ -10,6 +10,7 @@ export const Page2 = () => {
           <br />
         </>
       ))}
+      <Link to="page2/999?name=hogehoge">Query Parameter</Link>
       <h2>Page2</h2>
     </>
   );
