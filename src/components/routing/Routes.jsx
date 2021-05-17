@@ -5,6 +5,7 @@ import {Page1} from "./Page1";
 import {Page2} from "./Page2";
 import {DetailA} from "./DetailA";
 import {DetailB} from "./DetailB";
+import { UrlParameter } from "./UrlParameter";
 
 export const Routes = () => {
   return(
@@ -30,9 +31,20 @@ export const Routes = () => {
           )}
         />
 
-        <Route path="/page2">
-          <Page2 />
-        </Route>
+        <Route
+          path="/page2"
+          render={({match: {url}}) => (
+            <Switch>
+              <Route exact path={url}>
+                <Page2 />
+              </Route>
+              <Route path={`${url}/:id`}>
+                <UrlParameter />
+              </Route>
+            </Switch>
+          )}
+        />
+
       </Switch>
     </>
   );
