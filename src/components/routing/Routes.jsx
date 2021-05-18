@@ -7,6 +7,7 @@ import {DetailA} from "./DetailA";
 import {DetailB} from "./DetailB";
 import { UrlParameter } from "./UrlParameter";
 import { Page404 } from "./Page404";
+import { CountUp } from "../memo/CountUp";
 
 export const Routes = () => {
   return(
@@ -44,6 +45,9 @@ export const Routes = () => {
             </Switch>
           )}
         />
+        <Route path="/countUp">
+          <CountUp />
+        </Route>
         <Route path="*">
           <Page404 />
         </Route>
