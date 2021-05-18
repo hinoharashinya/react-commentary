@@ -6,6 +6,7 @@ import {Page2} from "./Page2";
 import {DetailA} from "./DetailA";
 import {DetailB} from "./DetailB";
 import { UrlParameter } from "./UrlParameter";
+import { Page404 } from "./Page404";
 
 export const Routes = () => {
   return(
@@ -30,7 +31,6 @@ export const Routes = () => {
             </Switch>
           )}
         />
-
         <Route
           path="/page2"
           render={({match: {url}}) => (
@@ -44,7 +44,9 @@ export const Routes = () => {
             </Switch>
           )}
         />
-
+        <Route path="*">
+          <Page404 />
+        </Route>
       </Switch>
     </>
   );
