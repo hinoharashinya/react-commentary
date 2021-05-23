@@ -1,6 +1,13 @@
 import {Link, useHistory} from "react-router-dom";
-import {useContext, useState} from "react";
+import {useContext, useState, memo} from "react";
 import {UserContext} from "../../providers/UserProvider";
+
+const Page1Child = memo(() => {
+  console.log("child")
+  return(
+    <h2>Page1Child</h2>
+  )
+});
 
 export const Page1 = () => {
   const stateA = "state";
@@ -36,6 +43,7 @@ export const Page1 = () => {
       <p>{userInfo.userName}</p>
       <input type="text" value={inputUserName} onChange={onChangeInput}/>
       <button onClick={changeUserName}>change user name</button>
+      <Page1Child />
     </>
   );
 }
